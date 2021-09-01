@@ -7,21 +7,21 @@ import java.util.Scanner;
 public class Member extends User {
 	private int login_count=0;
 
-	private ArrayList<Item> mycart=new ArrayList<Item>();
+	private ArrayList<Item> mycar=new ArrayList<Item>();
 	Member(String id,String password,String name,String email){
 		super(id,password,name,email);
 	}
 
 
 	public void addItems(Item i){
-		mycart.add(i);
+		mycar.add(i);
 	}
 	public void show_my_thing(){
-		if(mycart.size()==0){
+		if(mycar.size()==0){
 			System.out.println("Cart Empty");
 			return;
 		}
-		Iterator<Item> itr = mycart.iterator();
+		Iterator<Item> itr = mycar.iterator();
 		int cart_index=1;
 		while(itr.hasNext()){
 			Item element = (Item) itr.next();
@@ -55,7 +55,7 @@ public class Member extends User {
 	}
 	public void remove_items(){
 		show_my_thing();
-		if(mycart.size()==0){
+		if(mycar.size()==0){
 			//System.out.println("Cart Empty");
 			return;
 		}
@@ -63,7 +63,7 @@ public class Member extends User {
 		Scanner in= new Scanner(System.in);
 		int remove_index=in.nextInt();
 		remove_index--;
-		mycart.remove(remove_index);
+		mycart=.remove(remove_index);
 
 	}
 
